@@ -9,12 +9,16 @@ function App() {
     setTodos([todo, ...todos]);
   }
 
+  function removeTodo(id) {
+    setTodos(todos.filter(todo => todo.id !== id));
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         <p>React To-Do</p>
         <TodoInput addTodo={addTodo}/>
-        <TodoList todos={todos}/>
+        <TodoList todos={todos} removeTodo={removeTodo}/>
       </header>
     </div>
   );

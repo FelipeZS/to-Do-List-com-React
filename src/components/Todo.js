@@ -1,9 +1,13 @@
 import React from 'react';
 
-function Todo({todo}) {
+function Todo({todo, removeTodo}) {
+  function handleRemoveClick() {
+    removeTodo(todo.id);
+  }
+
   return (
     <div>
-      <li>{todo.task}</li>
+      <li>{todo.task} - <button onClick={handleRemoveClick}>Deletar</button></li>
     </div>
   );
 }
